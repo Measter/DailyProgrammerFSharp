@@ -3,11 +3,11 @@ biopsy IN ORDER
 chinos IN ORDER
 defaced NOT IN ORDER
 chintz IN ORDER
-sponged NOT IN ORDER
+sponged REVERSE ORDER
 bijoux IN ORDER
 abhors IN ORDER
 fiddle NOT IN ORDER
 begins IN ORDER
 chimps IN ORDER
-wronged NOT IN ORDER
-Time: 00:00:00.0021446
+wronged REVERSE ORDER
+Time: 00:00:00.0024142
