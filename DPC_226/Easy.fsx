@@ -1,4 +1,7 @@
-﻿open System
+﻿// Daily Programmer Challenge #226: Adding Fractions
+// https://www.reddit.com/r/dailyprogrammer/comments/3fmke1
+
+open System
 
 let Difficulty = "Easy"
 

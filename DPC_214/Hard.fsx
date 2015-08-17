@@ -1,4 +1,7 @@
-﻿open System
+﻿// Daily Programmer Challenge #214: Chester, the Greedy Pomeranian
+// https://www.reddit.com/r/dailyprogrammer/comments/3629st
+
+open System
 
 let Difficulty = "Hard"
 

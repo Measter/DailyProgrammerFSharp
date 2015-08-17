@@ -1,3 +1,6 @@
+// Daily Programmer Challenge #
+// https://www.reddit.com/r/dailyprogrammer/comments/
+
 let Difficulty = "Hard"
 
 let OutStream = new System.IO.StreamWriter(Difficulty+"Data/Output.txt", false)
