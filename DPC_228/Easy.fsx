@@ -14,7 +14,7 @@ let NotInOrder = "NOT IN ORDER"
 
 type Word = { Word:string; CharCodes:int list }
 
-let ParseStrings s = { Word = s; CharCodes = [for ch in s do yield int (System.Char.ToLower ch) - int 'a' ] }
+let ParseStrings s = { Word = s; CharCodes = [for ch in s do yield int (System.Char.ToLower ch) ] }
 let IsOrdered l = l = (l |> List.sort)
 
 match lines with
