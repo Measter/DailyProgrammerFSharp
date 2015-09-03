@@ -1,0 +1,2 @@
+Standard Deviation: 83.6616
+Time: 00:00:00.0036066
