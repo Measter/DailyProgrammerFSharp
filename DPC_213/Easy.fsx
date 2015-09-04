@@ -48,9 +48,19 @@ let rec GetPrettyName (num:string) =
     if num.Length % 2 <> 0 then
         GetPrettyName ("0" + num)
     else if num.Length > 2 then
-        GetPrettyName num.[0..1] + " bitey " + GetPrettyName num.[2 .. num.Length-1]
+        GetPrettyName num.[0..1] + "bitey " + GetPrettyName num.[2 .. num.Length-1]
     else
-        TensDict.[num.[0]] + "-" + SingleDict.[num.[1]]
+        if num.[0] = '1' then
+            match num.[1] with
+            | '0' -> "Ten"
+            | '1' -> "Eleven"
+            | '2' -> "Twelve"
+            | '3' -> "Thirteen"
+            | _ -> SingleDict.[num.[1]] + TensDict.[num.[0]]
+        else if num.[1] = '0' then
+            TensDict.[num.[0]] + "-"
+        else
+            TensDict.[num.[0]] + "-" + SingleDict.[num.[1]] + " "
 
 
 let rec GetNumberNames (names:string list) =
