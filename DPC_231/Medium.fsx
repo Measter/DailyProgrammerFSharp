@@ -51,14 +51,17 @@ let ParseCard (cardString:string) =
     else
         Some {Number = num.Value; Symbol = symbol.Value; Colour = col.Value; Fill = fill.Value}
 
+let AreEqual a b c = a = b && a = c
+let AreNotEqual a b c = a <> b && a <> c && b <> c
+let ConditionCheck a b c = (AreEqual a b c) || (AreNotEqual a b c)
 
 let IsSetMatch (set:Card list) =
     match set with
     | a::b::c::tail when tail.Length = 0 ->
-        let colorCheck = (a.Colour = b.Colour && a.Colour = c.Colour) || (a.Colour <> b.Colour && a.Colour <> c.Colour && b.Colour <> c.Colour)
-        let fillCheck = (a.Fill = b.Fill && a.Fill = c.Fill) || (a.Fill <> b.Fill && a.Fill <> c.Fill && b.Fill <> c.Fill)
-        let symbolCheck = (a.Symbol = b.Symbol && a.Symbol = c.Symbol) || (a.Symbol <> b.Symbol && a.Symbol <> c.Symbol && b.Symbol <> c.Symbol)
-        let numberCheck = (a.Number = b.Number && a.Number = c.Number) || (a.Number <> b.Number && a.Number <> c.Number && b.Number <> c.Number)
+        let colorCheck = ConditionCheck a.Colour b.Colour c.Colour
+        let fillCheck = ConditionCheck a.Fill b.Fill c.Fill
+        let symbolCheck = ConditionCheck a.Symbol b.Symbol c.Symbol
+        let numberCheck = ConditionCheck a.Number b.Number c.Number
         numberCheck && symbolCheck && fillCheck && colorCheck
     | _ -> failwith "Invalid Set"
 
