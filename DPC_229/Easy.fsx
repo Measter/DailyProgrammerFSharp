@@ -1,5 +1,6 @@
 // Daily Programmer Challenge #229
 // https://www.reddit.com/r/dailyprogrammer/comments/3i99w8
+// 2015-08-25
 
 let Difficulty = "Easy"
 

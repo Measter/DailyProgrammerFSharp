@@ -1,3 +1,5 @@
+// 2015-09-10
+
 let OutStream = new System.IO.StreamWriter("AllCardsList.txt", false)
 System.Console.SetOut(OutStream) |> ignore
 

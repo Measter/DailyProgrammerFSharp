@@ -1,5 +1,6 @@
 // Daily Programmer Challenge #231 Intermediate: Set Game Solver
 // https://www.reddit.com/r/dailyprogrammer/comments/3ke4l6
+// 2015-09-10
 
 let Difficulty = "Medium"
 

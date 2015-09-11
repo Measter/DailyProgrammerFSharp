@@ -1,5 +1,6 @@
 ﻿// Daily Programmer Challenge #214: Chester, the Greedy Pomeranian
 // https://www.reddit.com/r/dailyprogrammer/comments/3629st
+// 2015-08-17
 
 open System
 

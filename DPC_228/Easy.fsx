@@ -1,5 +1,6 @@
 // Daily Programmer Challenge #228: Letters in Alphabetical Order
 // https://www.reddit.com/r/dailyprogrammer/comments/3h9pde
+// 2015-08-17
 
 let Difficulty = "Easy"
 

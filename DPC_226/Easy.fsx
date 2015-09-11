@@ -1,5 +1,6 @@
 ﻿// Daily Programmer Challenge #226: Adding Fractions
 // https://www.reddit.com/r/dailyprogrammer/comments/3fmke1
+// 2015-08-17
 
 open System
 
