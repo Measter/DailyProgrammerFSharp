@@ -14,19 +14,19 @@ let lines = List.ofSeq (System.IO.File.ReadAllLines (Difficulty+"Data/Input.txt"
 type Coordinate = {X:float; Y:float} 
 type CoordinatePair = {First:Coordinate; Second:Coordinate}
 
-let rec TryParseCoordinates (lines:string list) =
+let rec TryParseCoordinates (lines:string list) acc =
     match lines with
-    | this::rest ->
+    | this::rest when rest.Length > 0 ->
         let parts = this.[1 .. this.Length-2].Split([|","|], System.StringSplitOptions.None)
         let parsedX, x = System.Double.TryParse (parts.[0].Trim())
         let parsedY, y = System.Double.TryParse (parts.[1].Trim())
 
         match parsedX && parsedY, rest.Length with
         | true, 0 -> [Some {X = x; Y=y}]
-        | true, _ -> Some {X = x; Y=y} :: TryParseCoordinates rest
+        | true, _ -> TryParseCoordinates rest (Some {X = x; Y=y} :: acc)
         | false, 0 -> [None]
-        | false, _ -> None :: TryParseCoordinates rest
-    | [] -> []
+        | false, _ -> TryParseCoordinates rest (None :: acc)
+    | _ -> acc
 
 let GetRadius (x:Coordinate) (y:Coordinate) = System.Math.Pow(x.X - y.X, 2.0) + System.Math.Pow(x.Y-y.Y, 2.0)
 
@@ -78,7 +78,7 @@ match lines with
     match hasParsed with
     | false -> printfn "Error: Unable to parse input length."
     | true when count > 1 && tail.Length = count ->
-        let coords = TryParseCoordinates tail
+        let coords = TryParseCoordinates tail []
 
         if coords |> List.exists (fun x -> x.IsNone) then printfn "One or more inputs were not parsed."
         else
