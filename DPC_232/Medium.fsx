@@ -60,7 +60,12 @@ let rec GetMinDistance (list:Coordinate list) =
             if minRad = radLeft then minLeft
             else minRight
         else
-            GetMinDistance centreColumn
+            let centreMatch = GetMinDistance centreColumn
+            let centreMatchRad = System.Math.Sqrt(GetRadius centreMatch.First centreMatch.Second)
+            
+            if centreMatchRad < minRad then centreMatch
+            elif minRad = radLeft then minLeft
+            else minRight
     else
         let combs = list |> combinations [] 2 |> Seq.minBy (fun l -> GetRadius l.Head l.Tail.Head)         
         {First = combs.Head; Second = combs.Tail.Head}
